@@ -1,0 +1,42 @@
+<div class="container">
+
+  <head>
+    <h1>MollyBrianslist</h1>
+  </head>
+
+  <ul class = 'categories'>
+  <% @categories.each do |cat| %>
+  <% @cat_id = cat.id %>
+  <li> <a href = 'category/<%=@cat_id%>'><%=cat.name%></a></li>
+  <% end %>
+  </ul>
+
+  <form id='create_post' action="/" method="post">
+    Write a post:
+    <br>
+    <p>
+    Title
+    <input type="text" name="post_title">
+    Category
+    <SELECT name="post_category">
+      <OPTION>Apts / Housing</OPTION>
+      <OPTION>For Sale</OPTION>
+      <OPTION>Jobs</OPTION>
+      <OPTION>Personals</OPTION>
+      <OPTION>Volunteer</OPTION>
+   </SELECT>
+
+    </p>
+    <TEXTAREA name="post_body" rows="10" cols="50">
+      Write Stuff!
+   </TEXTAREA>
+
+    <p><input type="submit" value="Post it!!"></p>
+  </form>
+ 
+ <p id="editmessage"></p>
+ <a id="editlink" href=""></a>
+
+
+
+</div>

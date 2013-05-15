@@ -1,0 +1,20 @@
+<div class="container">
+  <form id= 'edit_post' action="/category/posts/<%=@post.id%>/<%=@post.edit_key%>" method="post">
+      Edit your post:
+      <br>
+      <p>
+      Title
+      <input type="text" name="updated_title" value="<%=@post.title%>">
+      
+      <!-- <input type="text" name="post_category"> -->
+      </p>
+      <TEXTAREA name="updated_body" rows="10" cols="50">
+        <%=@post.body%>
+     </TEXTAREA>
+
+      <!-- <input type="text" name="post_body"> -->
+      <p><input type="submit" value="Update it!!"></p>
+    </form>
+
+    <p id='updated_post_message'></p>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+
+  
+  <ul class = 'categories'>
+  <% @posts.each do |post| %>
+  <% @post_id = post.id %>
+  <li> <a href = 'posts/<%=@post_id%>'><%=post.title%></a></li>
+  <% end %>
+  </ul>
+
+
+</div> 
