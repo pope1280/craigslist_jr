@@ -7,7 +7,6 @@ get '/' do
 end
 
 post '/' do
-  # p params.inspect
   category = Category.where('name = ?', params[:post_category])
   category_id = category.first.id
   edit_key = SecureRandom.hex(10)
@@ -19,7 +18,6 @@ post '/' do
 end
 
 get '/category/:cat_id' do
-  # create variable holding all posts here with active record
   @posts = Post.where('category_id = ?', params[:cat_id])
   erb :category
 end
@@ -38,9 +36,6 @@ end
 post '/category/posts/:post_id/:edit_key' do
   puts "Inside the post method"
   p params[:edit_key]
-  # p @post.inspect
   @post = Post.find_by_edit_key(params[:edit_key])
   @post.update_attributes(:title => params[:updated_title], :body => params[:updated_body])
-
-
 end
